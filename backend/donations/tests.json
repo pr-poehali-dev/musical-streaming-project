@@ -1,0 +1,31 @@
+{
+  "tests": [
+    {
+      "name": "Get donations list",
+      "method": "GET",
+      "path": "/",
+      "expectedStatus": 200,
+      "expectedBody": {
+        "donations": "array"
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Create new donation",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "donor_name": "Тестовый донатор",
+        "amount": 40,
+        "message": "Спасибо за проект!",
+        "card_type": "Мир"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "success": true,
+        "donation_id": "number"
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}
